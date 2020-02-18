@@ -1,31 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
-using Laptop.Entity;
 using LaptopItems;
+using Laptop.Entity;
 
 namespace LaptopStore.Controllers
 {
-    public class DefaultController : Controller
+    public class LaptopController : Controller
     {
-        // GET: Default
+        // GET: Laptop
         LaptopRepository laptop;
-        public DefaultController()
+        public LaptopController()
         {
             laptop = new LaptopRepository();
         }
         public ActionResult Index()
         {
             IEnumerable<LaptopSpecification> specifications = laptop.GetAllLaptopDetails();
-            return View();
+            return View(specifications);
         }
 
-        
         public ActionResult Create()
         {
             return View();
         }
 
-       
         [HttpPost]
         public ActionResult Create(LaptopSpecification product)
         {
@@ -34,16 +35,14 @@ namespace LaptopStore.Controllers
             return RedirectToAction("Index");
         }
 
-       
+
         public ActionResult Delete(int id)
         {
             laptop.DeleteEmployee(id);
             TempData["Message"] = "Item Deleted Successfully!";
             return RedirectToAction("Index");
-            
+
         }
-
-
 
     }
 }

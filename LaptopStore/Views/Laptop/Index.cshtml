@@ -1,10 +1,7 @@
 ﻿
-@model IEnumerable<Laptop.Entity.LaptopSpecification>
-
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Welcome</h2>
 @if (TempData["Message"] != null)
 {
@@ -18,7 +15,8 @@
         <th>Laptop Brand</th>
         <th>Price</th>
         <th>Decription</th>
-        
+        <td>Action</td>
+
     </tr>
     @foreach (Laptop.Entity.LaptopSpecification product in Model)
     {
@@ -35,4 +33,3 @@
         </tr>
     }
 </table>
-
