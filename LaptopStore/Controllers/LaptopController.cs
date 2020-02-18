@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using LaptopItems;
 using Laptop.Entity;
+using System.Linq;
+using LaptopItems;
 
 namespace LaptopStore.Controllers
 {
@@ -38,10 +37,24 @@ namespace LaptopStore.Controllers
 
         public ActionResult Delete(int id)
         {
-            laptop.DeleteEmployee(id);
+            laptop.DeleteItem(id);
             TempData["Message"] = "Item Deleted Successfully!";
             return RedirectToAction("Index");
 
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+           LaptopSpecification specification= laptop.GetLaptopById(id);
+            return View(specification);
+
+        }
+        [HttpPost]
+        public ActionResult Update(LaptopSpecification specification)
+        {
+            laptop.UpdateItems(specification);
+            TempData["Message"] = "Item Updated Successfully!";
+            return RedirectToAction("Index");
         }
 
     }

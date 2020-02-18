@@ -27,11 +27,19 @@ namespace LaptopItems
         {
             return products.Find(id => id.Id == lapId);
         }
-        public void DeleteEmployee(int id)
+        public void DeleteItem(int id)
         {
             LaptopSpecification item = GetLaptopById(id);
             if (item != null)
                 products.Remove(item);
+        }
+        public void UpdateItems(LaptopSpecification item)
+        {
+            LaptopSpecification specification = GetLaptopById(item.Id);
+            specification.Id = item.Id;
+            specification.Brand = item.Brand;
+            specification.Price = item.Price;
+            specification.Description = item.Description;
         }
     }
 }
