@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<Laptop.Entity.LaptopSpecification>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome</h2>
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"])
+}
+<br />
+@Html.ActionLink("Add New Laptop", "Create")
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Work Type</th>
+        <th>Experience</th>
+        <th>Salary</th>
+        <th>Action</th>
+    </tr>
+    @foreach (Laptop.Entity.LaptopSpecification product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Brand</td>
+            <td>@product.Price</td>
+            <td>@product.Description</td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = product.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = product.Id })
+            </td>
+        </tr>
+    }
+</table>
+
