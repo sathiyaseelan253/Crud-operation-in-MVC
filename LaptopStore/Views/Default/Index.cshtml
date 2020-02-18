@@ -14,12 +14,11 @@
 @Html.ActionLink("Add New Laptop", "Create")
 <table border="1">
     <tr>
-        <th>Employee Id</th>
-        <th>Employee Name</th>
-        <th>Work Type</th>
-        <th>Experience</th>
-        <th>Salary</th>
-        <th>Action</th>
+        <th>Id</th>
+        <th>Laptop Brand</th>
+        <th>Price</th>
+        <th>Decription</th>
+        
     </tr>
     @foreach (Laptop.Entity.LaptopSpecification product in Model)
     {

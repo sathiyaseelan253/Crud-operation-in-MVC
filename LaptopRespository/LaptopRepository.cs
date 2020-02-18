@@ -9,9 +9,9 @@ namespace LaptopItems
         public static List<LaptopSpecification> products = new List<LaptopSpecification>();
         static LaptopRepository()
         {
-            products.Add(new LaptopSpecification { Id = 1, Brand = "HP pavilion", Price=40000,Description = "1 x Cadbury Dairy Milk Silk Chocolate Bar (150g)" });
-            products.Add(new LaptopSpecification { Id = 2, Brand = "Dell", Price = 30000, Description = "AmazonBasics 78 cm Burnt Orange Hardsided Check-in Trolley"});
-            products.Add(new LaptopSpecification { Id = 3, Brand ="Lenovo", Price = 35000, Description = "boAt Rockerz 255 Sports Bluetooth Wireless Earphone with Immersive Stereo Sound and Hands Free Mic (Neon)"});
+            products.Add(new LaptopSpecification { Id = 1, Brand = "HP pavilion", Price=40000,Description = "10th Generation Intel® Core™ i5 processor,Windows 10 Home Single Language 64,1 TB 5400 rpm SATA,8 GB DDR4 - 2666 SDRAM(1 x 8 GB),Intel® UHD Graphics" });
+            products.Add(new LaptopSpecification { Id = 2, Brand = "Dell", Price = 30000, Description = "9th Generation Intel® Core™ i5-9300H,9th Generation Intel® Core™ i5-9300H,Windows 10 Home Plus Single Language,NVIDIA® GeForce® GTX 1050 3GB GDDR5,8GB 2x4GB DDR4 2666MHz" });
+            products.Add(new LaptopSpecification { Id = 3, Brand ="Lenovo", Price = 35000, Description = "Powerful, intuitive, & secure 35.56cms (14) laptop,Skype - certified mics,full - sized keyboard,Optional Intel® Optane™ memory & WiFi 6"});
             products.Add(new LaptopSpecification { Id = 4, Brand = "HP Omen Gaming Laptop", Price = 80000, Description = "HP Omen Core i7 9th Gen 15.6-inch FHD Gaming Laptop (16GB/1TB HDD + 512GB SSD/Windows 10/NVIDIA GTX 1650 4GB Graphics/Shadow Black), 15-dh0135TX"});
            
         }
