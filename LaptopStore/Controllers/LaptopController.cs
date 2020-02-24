@@ -56,6 +56,6 @@ namespace LaptopStore.Controllers
             TempData["Message"] = "Item Updated Successfully!";
             return RedirectToAction("Index");
         }
-
+      
     }
 }

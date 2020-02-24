@@ -7,17 +7,18 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm("Update", "Laptop",FormMethod.Post))
+@using (Html.BeginForm("Update", "Laptop", FormMethod.Post))
 {
+    @Html.HiddenFor(Model => Model.Id);
     <table border="1">
         <tr>
             <td>ID :</td>
-            <td> @Html.TextBoxFor(Model => Model.Id)</td>
+            <td></td>
         </tr>
         <tr>
             <td>Laptop Brand : </td>
             <td>@Html.TextBoxFor(Model => Model.Brand)</td>
-        </tr> 
+        </tr>
         <tr>
             <td>Price : </td>
             <td>@Html.TextBoxFor(Model => Model.Price)</td>

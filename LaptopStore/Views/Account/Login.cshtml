@@ -1,0 +1,44 @@
+﻿@model Account.Entity.Account
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 style="text-align:center;">Login</h2>
+<div">
+    <table align="center" cellspacing:300px>
+        <tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.Email, new { @class = "col-md-2 control-label" })</td>
+            <td>@Html.TextBoxFor(Model => Model.Name, new { @class = "col-md-2 control-label" })</td>
+            @Html.ValidationMessageFor(model => model.Name)
+        </tr>
+        <br />
+        <tr>
+            <td> @Html.LabelFor(model => model.Password, new { @class = "col-md-2 control-label" })</td>
+            <td>@Html.TextBoxFor(Model => Model.Password, new { @class = "col-md-2 control-label" })</td>
+            @Html.ValidationMessageFor(model => model.Password)
+        </tr>
+        <tr style="float:right;">
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+            <td>
+                <input type="button" onclick="" value="SignUp" />
+            </td>
+        </tr>
+        <tr>
+            <td style="float:right;">
+                @Html.ActionLink("New user", "SignIn")
+            </td>
+        </tr>
+    </table>
+    @section Validation
+    {
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    }
+
+</div>
+
+

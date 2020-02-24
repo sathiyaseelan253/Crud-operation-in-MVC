@@ -1,0 +1,75 @@
+﻿@model Account.Entity.Account
+
+@{
+    ViewBag.Title = "SignIn";
+}
+
+
+
+<h2 style="font-size:20px;text-align:center;">SignIn Page</h2>
+<div>
+    <table border:groove align="center">
+
+        <tr>
+            <td> @Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label" })</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </td>
+
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.Password, new { @class = "col-md-2 control-label" })</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+
+        </tr>
+        <tr>
+            <td>Enter Qualification:</td>
+            <td>
+                @Html.DropDownList("Qualification", new List<SelectListItem>
+    {
+        new SelectListItem { Text = "B.E", Value = "1", Selected=true},
+        new SelectListItem { Text = "M.E", Value = "2"},
+        new SelectListItem { Text = "Ph.d", Value = "3"},
+         new SelectListItem { Text = "MS", Value = "4"}
+    }, "Select Department")
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.ContactNo, new { @class = "col-md-2 control-label" })</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.ContactNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ContactNo)
+            </td>
+
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.Email, new { @class = "col-md-2 control-label" })</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </td>
+
+        </tr>
+        <tr>
+            <td>Select Gender : </td>
+            <td>
+                Male @Html.RadioButtonFor(Model => Model.Gender, "Male")
+                Female @Html.RadioButtonFor(Model => Model.Gender, "Female")
+                Another @Html.RadioButtonFor(Model => Model.Gender, "Another")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="float:right;">
+                <input type="submit" value="Signin" />
+            </td>
+    </table>
+    @section Validation
+    {
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    }
+</div>
