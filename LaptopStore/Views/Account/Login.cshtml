@@ -2,43 +2,60 @@
 
 @{
     ViewBag.Title = "Login";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style>
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 15px;
+            width: 100;
+        }
+
+        input[type="text"] {
+            border: none;
+            padding: 10px;
+        }
+
+        span {
+            color: red;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+<h2 style="text-align:center;">Login</h2>
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+<table align="center" cellspacing:300px>
+
+    <tr>
+    <tr>
+    <tr>
+        <td><lable>Email :</lable></td>
+        <td> <lable>@Html.TextBoxFor(Model => Model.Email)</lable><span> @Html.ValidationMessageFor(model => model.Email)</span></td>
+    </tr>
+
+
+   
+    <tr>
+        <td><lable>Password :</lable></td>
+        <td> <lable>@Html.TextBoxFor(Model => Model.Password)</lable><span> @Html.ValidationMessageFor(model => model.Password)</span></td>
+    </tr>
+    <tr style="float:right;">
+        <td>
+            <input type="submit" value="Login"/>
+        </td>
+        <td>
+            <input type="button" onclick="" value="SignUp" />
+        </td>
+    </tr>
+   
+</table>
 }
 
-<h2 style="text-align:center;">Login</h2>
-<div">
-    <table align="center" cellspacing:300px>
-        <tr>
-        <tr>
-            <td> @Html.LabelFor(model => model.Email, new { @class = "col-md-2 control-label" })</td>
-            <td>@Html.TextBoxFor(Model => Model.Name, new { @class = "col-md-2 control-label" })</td>
-            @Html.ValidationMessageFor(model => model.Name)
-        </tr>
-        <br />
-        <tr>
-            <td> @Html.LabelFor(model => model.Password, new { @class = "col-md-2 control-label" })</td>
-            <td>@Html.TextBoxFor(Model => Model.Password, new { @class = "col-md-2 control-label" })</td>
-            @Html.ValidationMessageFor(model => model.Password)
-        </tr>
-        <tr style="float:right;">
-            <td>
-                <input type="submit" value="Login" />
-            </td>
-            <td>
-                <input type="button" onclick="" value="SignUp" />
-            </td>
-        </tr>
-        <tr>
-            <td style="float:right;">
-                @Html.ActionLink("New user", "SignIn")
-            </td>
-        </tr>
-    </table>
-    @section Validation
-    {
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-    }
 
-</div>
+
 
 

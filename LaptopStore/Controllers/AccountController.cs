@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace LaptopStore.Controllers
 {
@@ -12,11 +8,21 @@ namespace LaptopStore.Controllers
        
         public ActionResult Login()
         {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
             return View();
+
         }
         public ActionResult SignIn()
         {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
             return View();
+           
         }
     }
 }

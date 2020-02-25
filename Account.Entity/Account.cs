@@ -4,19 +4,19 @@ namespace Account.Entity {
     
     public class Account
     {
-        [Required]
+        [Required(ErrorMessage ="Name required")]
         public string Name { get; set; }
-        [RegularExpression(@"^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$",ErrorMessage ="Weak Password")]
+        [Required(ErrorMessage = "Password required")]
         public string Password { get; set; }
-        [Required]
+        [Required(ErrorMessage = "City required")]
         public string City { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Qualification required")]
         public string Qualification { get; set; }
-        [Required]
+        [Required(ErrorMessage = "ContactNo required")]
         public string ContactNo { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email required")]
         public string Email { get; set; }
-
+        [Required(ErrorMessage = "Gender required")]
         public string Gender { get; set; }
 
     }

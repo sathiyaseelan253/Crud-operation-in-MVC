@@ -2,32 +2,45 @@
 
 @{
     ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
+    <style>
 
+        table, th, td {
+            border: 1px solid black;
+            padding: 15px;
+            width: 100px;
+        }
+
+        input[type="text"] {
+            border: none;
+            padding: 10px;
+        }
+
+        span {
+            color: red;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
 <h2 style="font-size:20px;text-align:center;">SignIn Page</h2>
 <div>
-    <table border:groove align="center">
+    <table style="border:groove" align="center">
 
         <tr>
-            <td> @Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label" })</td>
-            <td>
-                @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Name)
-            </td>
-
+            <td><lable>Name :</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.Name)</lable><span> @Html.ValidationMessageFor(model => model.Name)</span></td>
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.Password, new { @class = "col-md-2 control-label" })</td>
-            <td>
-                @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Password)
-            </td>
-
+            <td><lable>Password :</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.Password)</lable><span> @Html.ValidationMessageFor(model => model.Password)</span></td>
         </tr>
         <tr>
-            <td>Enter Qualification:</td>
+            <td><lable>Enter Qualification :</lable></td>
             <td>
                 @Html.DropDownList("Qualification", new List<SelectListItem>
     {
@@ -36,40 +49,33 @@
         new SelectListItem { Text = "Ph.d", Value = "3"},
          new SelectListItem { Text = "MS", Value = "4"}
     }, "Select Department")
+                <lable>@Html.TextBoxFor(Model => Model.Qualification)</lable><span> @Html.ValidationMessageFor(model => model.Qualification)</span>
             </td>
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.ContactNo, new { @class = "col-md-2 control-label" })</td>
-            <td>
-                @Html.TextBoxFor(Model => Model.ContactNo, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ContactNo)
-            </td>
-
+            <td><lable>Contact No:</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.ContactNo)</lable><span> @Html.ValidationMessageFor(model => model.ContactNo)</span></td>
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.Email, new { @class = "col-md-2 control-label" })</td>
-            <td>
-                @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Email)
-            </td>
-
+            <td><lable>Email ID :</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.Email)</lable><span> @Html.ValidationMessageFor(model => model.Email)</span></td>
         </tr>
         <tr>
-            <td>Select Gender : </td>
+            <td><lable>Select Gender :</lable> </td>
             <td>
                 Male @Html.RadioButtonFor(Model => Model.Gender, "Male")
                 Female @Html.RadioButtonFor(Model => Model.Gender, "Female")
                 Another @Html.RadioButtonFor(Model => Model.Gender, "Another")
+                <lable>@Html.TextBoxFor(Model => Model.Gender)</lable><span> @Html.ValidationMessageFor(model => model.Gender)</span>
             </td>
         </tr>
         <tr>
-            <td colspan="2" style="float:right;">
+            <td>
                 <input type="submit" value="Signin" />
             </td>
+            <td>
+                <a href="www.google.com"></a>
+            </td>
     </table>
-    @section Validation
-    {
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-    }
+   
 </div>
