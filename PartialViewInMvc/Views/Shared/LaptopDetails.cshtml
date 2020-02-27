@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Laptop.Entity.LaptopSpecification>
+    <div class="container">
+        <div class="col-lg-4">
+            <table class="table table-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Brand)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(Item => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Item => item.Brand)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Item => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Item => item.Description)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+   

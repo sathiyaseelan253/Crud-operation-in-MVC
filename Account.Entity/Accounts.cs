@@ -2,9 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 namespace Account.Entity { 
     
-    public class Account
+    public class Accounts
     {
-        [Required(ErrorMessage ="Name required")]
+        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required.")]
+        [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Only Alphabets and Numbers allowed.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Password required")]
         public string Password { get; set; }
@@ -15,7 +17,7 @@ namespace Account.Entity {
         [Required(ErrorMessage = "ContactNo required")]
         public string ContactNo { get; set; }
         [Required(ErrorMessage = "Email required")]
-        public string Email { get; set; }
+        public string Email { get; set; } 
         [Required(ErrorMessage = "Gender required")]
         public string Gender { get; set; }
 

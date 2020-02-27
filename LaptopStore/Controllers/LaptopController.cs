@@ -2,12 +2,13 @@
 using System.Web.Mvc;
 using LaptopItems;
 using Laptop.Entity;
-using System.Linq;
-using LaptopItems;
 
 namespace LaptopStore.Controllers
 {
-    public class LaptopController : Controller
+    public class LaptopController : Controller 
+
+
+
     {
         // GET: Laptop
         LaptopRepository laptop;

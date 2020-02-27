@@ -1,4 +1,4 @@
-﻿@model Account.Entity.Account
+﻿@model Account.Entity.Accounts
 
 @{
     ViewBag.Title = "Login";
@@ -9,7 +9,7 @@
         table, th, td {
             border: 1px solid black;
             padding: 15px;
-            width: 100;
+            width: 100px;
         }
 
         input[type="text"] {
@@ -24,6 +24,7 @@
         h2 {
             text-align: center;
         }
+
     </style>
 <h2 style="text-align:center;">Login</h2>
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
@@ -34,7 +35,7 @@
     <tr>
     <tr>
         <td><lable>Email :</lable></td>
-        <td> <lable>@Html.TextBoxFor(Model => Model.Email)</lable><span> @Html.ValidationMessageFor(model => model.Email)</span></td>
+        <td> <lable>@Html.TextBoxFor(model => model.Email)</lable><span> @Html.ValidationMessageFor(model => model.Email)</span></td>
     </tr>
 
 
@@ -48,7 +49,7 @@
             <input type="submit" value="Login"/>
         </td>
         <td>
-            <input type="button" onclick="" value="SignUp" />
+            @Html.ActionLink("SignUp","SignIn","Account")
         </td>
     </tr>
    

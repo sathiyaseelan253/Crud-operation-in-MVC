@@ -1,4 +1,4 @@
-﻿@model Account.Entity.Account
+﻿@model Account.Entity.Accounts
 
 @{
     ViewBag.Title = "SignIn";
@@ -32,12 +32,14 @@
     <table style="border:groove" align="center">
 
         <tr>
-            <td><lable>Name :</lable></td>
-            <td> <lable>@Html.TextBoxFor(Model => Model.Name)</lable><span> @Html.ValidationMessageFor(model => model.Name)</span></td>
+            <td><lable>Name* :</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.Name)</lable><span> @Html.ValidationMessageFor(Model => Model.Name, "", new { @class = "text-danger" })</span></td>
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </tr>
         <tr>
-            <td><lable>Password :</lable></td>
-            <td> <lable>@Html.TextBoxFor(Model => Model.Password)</lable><span> @Html.ValidationMessageFor(model => model.Password)</span></td>
+            <td><lable>Password* :</lable></td>
+            <td> <lable>@Html.PasswordFor(Model=> Model.Password)</lable><span> </span> @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })</td>
+           
         </tr>
         <tr>
             <td><lable>Enter Qualification :</lable></td>
@@ -49,16 +51,16 @@
         new SelectListItem { Text = "Ph.d", Value = "3"},
          new SelectListItem { Text = "MS", Value = "4"}
     }, "Select Department")
-                <lable>@Html.TextBoxFor(Model => Model.Qualification)</lable><span> @Html.ValidationMessageFor(model => model.Qualification)</span>
+                <lable>@Html.TextBoxFor(Model => Model.Qualification)</lable><span>  @Html.ValidationMessageFor(Model => Model.Qualification, "", new { @class = "text-danger" })</span>
             </td>
         </tr>
         <tr>
-            <td><lable>Contact No:</lable></td>
-            <td> <lable>@Html.TextBoxFor(Model => Model.ContactNo)</lable><span> @Html.ValidationMessageFor(model => model.ContactNo)</span></td>
+            <td><lable>Contact No*:</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.ContactNo)</lable><span> @Html.ValidationMessageFor(Model => Model.ContactNo, "", new { @class = "text-danger" })</span></td>
         </tr>
         <tr>
-            <td><lable>Email ID :</lable></td>
-            <td> <lable>@Html.TextBoxFor(Model => Model.Email)</lable><span> @Html.ValidationMessageFor(model => model.Email)</span></td>
+            <td><lable>Email ID* :</lable></td>
+            <td> <lable>@Html.TextBoxFor(Model => Model.Email)</lable><span>  @Html.ValidationMessageFor(Model => Model.Email, "", new { @class = "text-danger" })</span></td>
         </tr>
         <tr>
             <td><lable>Select Gender :</lable> </td>
@@ -66,7 +68,7 @@
                 Male @Html.RadioButtonFor(Model => Model.Gender, "Male")
                 Female @Html.RadioButtonFor(Model => Model.Gender, "Female")
                 Another @Html.RadioButtonFor(Model => Model.Gender, "Another")
-                <lable>@Html.TextBoxFor(Model => Model.Gender)</lable><span> @Html.ValidationMessageFor(model => model.Gender)</span>
+                <lable>@Html.TextBoxFor(Model => Model.Gender)</lable><span> @Html.ValidationMessageFor(Model => Model.Gender, "", new { @class = "text-danger" })</span>
             </td>
         </tr>
         <tr>
